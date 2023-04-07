@@ -37,13 +37,10 @@ const requestHandler = (request, response) => {
   const randomIndex = Math.floor(Math.random() * pantun.length);
   response.end(pantun[randomIndex]);
 };
-
 const server = http.createServer(requestHandler);
-
 server.listen(port, (err) => {
   if (err) {
     return console.log("Something bad happened", err);
   }
-
   console.log(`API pantun running on port ${port}`);
 });
